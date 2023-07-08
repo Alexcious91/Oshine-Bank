@@ -1,0 +1,28 @@
+@font-face {
+    font-family: Montserrat-light;
+    src: url(/assets/Montserrat/static/Montserrat-Light.ttf);
+}
+
+body {
+    font-family: Montserrat-light;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.closeBtn {
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: aliceblue;
+}
+
+#card-deposit {
+    display: none;
+}
+
+#card-withdraw {
+    display: none;
+}

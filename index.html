@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oshine Bank | Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="mb-4">
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Oshine Bank</h1>
+    
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Check balance</h5>
+                <div id="customerForm">
+                    <div class="overview-balance">
+                        <h1 class="fs-1 mb-4" id="accountDetails">R 0.00</h1>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="John Doe" disabled required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number:</label>
+                        <input type="text" class="form-control" placeholder="123456789" id="accountNumber" disabled required>
+                    </div>
+        
+                    <div class="btn-group-sm d-flex mt-2">
+                        <!-- <button class="btn btn-primary mx-1" id="check_balance" onclick="getBalance()">Get Balance</button> -->
+                        <button class="btn btn-secondary mx-1"  onclick="openDeposit()">Deposit</button>
+                        <button class="btn btn-light mx-1"  onclick="openWithdraw()">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deposit Form Start -->
+        <div class="py-3 px-4 mb-4 rounded border" id="card-deposit">            
+            <div class="justify-content-between d-flex">
+                <h5 class="card-title py-2">Deposit Form</h5>
+                <span class="closeBtn border rounded px-2 py-2" onclick="closeDeposit()"><i class="bi bi-x"></i></span>
+            </div>
+            <div class="card-body">
+                <div id="customerForm">
+                    <div class="form-group">
+                        <label for="name">Amount:</label>
+                        <input type="number" class="form-control" id="amount" placeholder="R0.00" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number:</label>
+                        <input type="text" class="form-control" id="accountNumber" placeholder="123456789" required disabled>
+                    </div>
+        
+                    <div class="btn-group-sm d-flex mt-2">
+                        <button class="btn btn-primary" id="depositBtn" onclick="depositAmount()">Deposit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Deposit Form End -->
+
+
+        <!-- Withdraw Form Start -->
+        <div class="py-3 px-4 mb-4 rounded border" id="card-withdraw">            
+            <div class="justify-content-between d-flex">
+                <h5 class="card-title py-2">Withdraw Form</h5>
+                <span class="closeBtn border rounded px-2 py-2" onclick="closeWithdraw()"><i class="bi bi-x"></i></span>
+            </div>
+            <div class="card-body">
+                <div id="customerForm">
+                    <div class="form-group">
+                        <label for="name">Amount:</label>
+                        <input type="number" class="form-control" id="amount" placeholder="R0.00" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number:</label>
+                        <input type="text" class="form-control" id="accountNumber" placeholder="123456789" required disabled>
+                    </div>
+        
+                    <div class="btn-group-sm d-flex mt-2">
+                        <button class="btn btn-primary" id="withdrawBtn" onclick="withdrawAmount()">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Withdraw Form End -->
+
+     
+        <div class="card" >
+            <div class="card-header">Transaction history</div>
+
+            <div class="card-body">
+                <ul class="px-1" id="transactionList">
+                    <li class="border mb-2 p-2 rounded list-unstyled justify-content-between">
+                        <span>No transactions made</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+
+        <div class="btn-group-sm">
+            <div class="btn btn-primary" onclick="openBankStatement()">Bank statement</div>
+        </div>
+
+
+    
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
