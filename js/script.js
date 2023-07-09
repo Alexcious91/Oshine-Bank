@@ -27,8 +27,8 @@ class BankAccount {
   
   const account = new BankAccount("John Doe", "1234567890", 0);
   
-  const openDepositForm = document.getElementById("card-deposit");
-  const openWithdrawForm = document.getElementById("card-withdraw");
+  const depositForm = document.getElementById("card-deposit");
+  const withdrawForm = document.getElementById("card-withdraw");
   const depositButton = document.getElementById("depositBtn");
   const withdrawButton = document.getElementById("withdrawBtn");
   const accountDetails = document.getElementById("accountDetails");
@@ -40,19 +40,19 @@ class BankAccount {
   withdrawButton.addEventListener("click", withdrawAmount);
   
   function openDeposit() {
-    openDepositForm.style.display = "block";
+    depositForm.style.display = "block";
   }
   
   function closeDeposit() {
-    openDepositForm.style.display = "none";
+    depositForm.style.display = "none";
   }
   
 function openWithdraw() {
-    openWithdrawForm.style.display = "block";
+    withdrawForm.style.display = "block";
 }
   
 function closeWithdraw() {
-    openWithdrawForm.style.display = "none";
+    withdrawForm.style.display = "none";
 }
   
 function depositAmount() {
@@ -78,13 +78,13 @@ function depositAmount() {
 function withdrawAmount() {
     const withdrawInputAmount = parseFloat(document.getElementById("amount").value);
   
-    if (isNaN(withdrawInputAmount) || withdrawInputAmount <= 0) {
+    if (isNaN(withdrawInputAmount) || withdrawInputAmount < 0) {
         alert("Please enter a valid withdrawal amount.");
         return;
     }
   
     account.withdraw(withdrawInputAmount);
-    accountDetails.textContent = `R ${account.getBalance()}`;
+    accountDetails.textContent = `R ${account.getBalance()}.00`;
   
     if (withdrawInputAmount > account.balance) {
         alert("Insufficient funds!");
